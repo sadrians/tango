@@ -1,0 +1,168 @@
+Operations to perform:
+  Apply all migrations: admin, contenttypes, auth, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying sessions.0001_initial... OK
+
+You have installed Django's auth system, and don't have any superusers defined.
+Would you like to create one now? (yes/no): yes
+Superuser creation skipped due to not running in a TTY. You can run `manage.py createsuperuser` in your project to create one manually.
+Finished "/Users/ad/pyton/projects/tango/manage.py syncdb" execution.
+==========
+Error: That port is already in use.
+sudo lsof -t -i tcp:8000 | xargs kill -9
+=========
+stop server from terminal (it was started via liclipse and now hanging)
+killall python
+========
+superuser:
+ad
+adrian
+
+users:
+user1, user2, user3, user4
+========
+
+
+
+<!-- $(document).ready(function(){
+    $("p").click(function(){
+        $(this).hide();
+    });
+}); -->
+<!-- $(document).ready(function() {
+
+    $("#about-btn").click( function(event) {
+            alert("You clicked the button using JQuerry!");
+    });
+}); -->
+
+
+
+
+
+
+
+
+
+
+
+
+===================
+
+old code
+base.html template
+
+
+<!-- <!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Rango - {% block title %}How to Tango with Django!{% endblock %}</title>
+    </head>
+
+    <body>
+        <div>
+            {% block body_block %}{% endblock %}
+        </div>
+
+        <hr />
+
+        <div>
+            <ul>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'restricted' %}">Restricted Page</a></li>
+                <li><a href="{% url 'auth_logout' %}?next=/rango/">Logout</a></li>
+                <li><a href="{% url 'add_category' %}">Add a New Category</a></li>
+            {% else %}
+                <li><a href="{% url 'registration_register' %}">Register Here</a></li>
+                <li><a href="{% url 'auth_login' %}">Login</a></li>
+            {% endif %}
+
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'index' %}">Index</a></li>
+            </ul>
+        </div>
+    </body>
+</html> -->
+
+
+
+<!-- {% extends 'rango/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Add page{% endblock %}
+
+{% block body_block %}
+    <div class='page-header'>
+        <h1>Add a Page</h1>
+    </div>
+    <form id="page_form" method="post" action="/rango/category/{{category.slug}}/add_page/">
+
+        {% csrf_token %}
+        {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+        {% endfor %}
+
+        {% for field in form.visible_fields %}
+            {{ field.errors }}
+            {{ field.help_text }}
+            {{ field }}
+        {% endfor %}
+
+        <input type="submit" name="submit" value="Create Page" />
+    </form>
+
+{% endblock %} -->
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+
+    <body>
+        <h1>Add a Page</h1>
+        <form id="page_form" method="post" action="/rango/category/{{category.slug}}/add_page/">
+
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+
+            {% for field in form.visible_fields %}
+                {{ field.errors }}
+                {{ field.help_text }}
+                {{ field }}
+            {% endfor %}
+
+            <input type="submit" name="submit" value="Create Page" />
+        </form>
+    </body>
+
+</html> -->
+
+<!-- {% extends "rango/base.html" %}
+
+
+{% block body_block %}
+<div class='page-header'>
+<h1>Register Here</h1>
+</div>
+        <form method="post" action=".">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <input type="submit" value="Submit" />
+        </form>
+{% endblock %} -->
+
